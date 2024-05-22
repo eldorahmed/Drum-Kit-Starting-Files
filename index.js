@@ -9,14 +9,14 @@ const obj = {
   l: "tom-4",
 };
 buttons.forEach((button) => {
-  for (key in obj) {
-    if (button.textContent == key) {
-      let beat = new Audio(`./sounds/${obj[key]}.mp3`);
-      button.addEventListener("click", () => {
+  button.addEventListener("click", () => {
+    for (key in obj) {
+      if (button.textContent == key) {
+        let beat = new Audio(`./sounds/${obj[key]}.mp3`);
         beat.play();
-      });
+      }
     }
-  }
+  });
 });
 
 document.addEventListener("keydown", (e) => {
